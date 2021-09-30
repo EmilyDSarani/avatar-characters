@@ -35,7 +35,7 @@ describe('app routes', () => {
           id: 1,
           name:'Aang',
           element: 'Air',
-          img: 'https://i.insider.com/5ebdbc8c3ad8612a1c7aa143?width=856&format=jpeg',
+          img: 'https://www.pngitem.com/pimgs/m/233-2336335_transparent-aang-png-avatar-aang-png-download.png',
           title: 'Avatar',
           owner_id: 1 
         }, 
@@ -43,7 +43,7 @@ describe('app routes', () => {
           id: 2,
           name:'Zuko',
           element: 'Fire',
-          img: 'https://i.redd.it/jcyddoyzeo761.jpg',
+          img: 'https://www.pngitem.com/pimgs/m/375-3756861_zuko-avatar-png-transparent-png.png',
           title: 'Prince',
           owner_id: 1 
 
@@ -52,7 +52,7 @@ describe('app routes', () => {
           id: 3,
           name:'Katara',
           element: 'Water',
-          img: 'http://pm1.narvii.com/6078/caabea330dc68f44a3f855606f897516ec582759_00.jpg',
+          img: 'https://www.nicepng.com/png/detail/157-1576012_katara-de-avatar-katara-transparent.png',
           title: 'Healer', 
           owner_id: 1 
         }, 
@@ -60,7 +60,7 @@ describe('app routes', () => {
           id: 4,
           name:'Sokka',
           element: 'None',
-          img: 'https://i.pinimg.com/originals/08/ca/e8/08cae8f53ebfd473b1b3133b0138d9cd.jpg',
+          img: 'https://www.kindpng.com/picc/m/548-5484508_avatar-the-last-airbender-sokka-png-transparent-png.png',
           title: 'Plan-Guy',
           owner_id: 1  
         }, 
@@ -68,7 +68,7 @@ describe('app routes', () => {
           id: 5,
           name:'Toph',
           element: 'Earth',
-          img: 'http://images4.wikia.nocookie.net/__cb20081225191856/avatar/images/2/2e/Toph.png',
+          img: 'https://png.pngitem.com/pimgs/s/25-250115_aang-clipart-vector-toph-png-transparent-png.png',
           title: 'Blind-Bandit',
           owner_id: 1  
         }, 
@@ -76,7 +76,7 @@ describe('app routes', () => {
           id: 6,
           name:'Suki',
           element: 'None',
-          img: 'https://comicvine1.cbsistatic.com/uploads/scale_super/11138/111385676/7019867-suki.jpg',
+          img: 'https://static.wikia.nocookie.net/pure-good-wiki/images/1/14/Suki.png/revision/latest?cb=20210128205901',
           title: 'Kyoshi-Warrior',
           owner_id: 1  
         }, 
@@ -84,7 +84,7 @@ describe('app routes', () => {
           id: 7,
           name:'Appa',
           element: 'Air',
-          img: 'https://preview.redd.it/nx50st82y8351.png?auto=webp&s=f31cdd2db86f73ee5245bf8462fa7df187119254',
+          img: 'https://static.wikia.nocookie.net/p__/images/0/06/Appa.png/revision/latest?cb=20180813222453&path-prefix=protagonist',
           title: 'Bison',
           owner_id: 1  
         }, 
@@ -92,9 +92,9 @@ describe('app routes', () => {
           id: 8,
           name:'Momo',
           element: 'Air',
-          img: 'https://pbs.twimg.com/media/Eb78V98WsAU4-4G.png',
+          img: 'https://static.wikia.nocookie.net/p__/images/5/54/Tumblr_p3utnb393U1tyjd90o1_400.png/revision/latest?cb=20210227080156&path-prefix=protagonist',
           title: 'Lemur',
-          owner_id: 1  
+          owner_id: 1
         },
       ];
 
@@ -113,7 +113,7 @@ describe('app routes', () => {
           id: 1,
           name:'Aang',
           element: 'Air',
-          img: 'https://i.insider.com/5ebdbc8c3ad8612a1c7aa143?width=856&format=jpeg',
+          img: 'https://www.pngitem.com/pimgs/m/233-2336335_transparent-aang-png-avatar-aang-png-download.png',
           title: 'Avatar',
           owner_id: 1 
         };
@@ -156,7 +156,7 @@ describe('app routes', () => {
           id: 2,
           name:'Zuko',
           element: 'Fire',
-          img: 'https://i.redd.it/jcyddoyzeo761.jpg',
+          img: 'https://www.pngitem.com/pimgs/m/375-3756861_zuko-avatar-png-transparent-png.png',
           title: 'FireLord',
           owner_id: 1, 
         };
@@ -165,7 +165,7 @@ describe('app routes', () => {
         .send({
           name:'Zuko',
           element: 'Fire',
-          img: 'https://i.redd.it/jcyddoyzeo761.jpg',
+          img: 'https://www.pngitem.com/pimgs/m/375-3756861_zuko-avatar-png-transparent-png.png',
           title: 'FireLord'
         })
         .expect('Content-Type', /json/)
