@@ -119,11 +119,80 @@ describe('app routes', () => {
         };
       const data = await fakeRequest(app)
         .get('/avatar/1')
-        .expect('Content-Type', /json/);
-      // .expect(200);
+        .expect('Content-Type', /json/)
+        .expect(200);
   
       expect(data.body).toEqual(expectation);
     });
-    
+
+    test('posting new character', async() => {
+
+      const expectation = 
+        {
+          id: expect.any(Number),
+          name:'Ozai',
+          element: 'Fire',
+          img: 'https://pbs.twimg.com/media/EOSb5rPX0AAQKtL.jpg',
+          title: 'Phoenix King',
+          owner_id: expect.any(Number), 
+        };
+      const data = await fakeRequest(app)
+        .post('/avatar')
+        .send({
+          name: 'Ozai',
+          element: 'Fire',
+          img: 'https://pbs.twimg.com/media/EOSb5rPX0AAQKtL.jpg',
+          title: 'Phoenix King'
+        })
+        .expect('Content-Type', /json/)
+        .expect(200);
+
+      expect(data.body).toEqual(expectation);
+    });
+    test('putting updated info', async() => {
+
+      const expectation = 
+        {
+          id: 2,
+          name:'Zuko',
+          element: 'Fire',
+          img: 'https://i.redd.it/jcyddoyzeo761.jpg',
+          title: 'FireLord',
+          owner_id: 1, 
+        };
+      const data = await fakeRequest(app)
+        .put('/avatar/2')
+        .send({
+          name:'Zuko',
+          element: 'Fire',
+          img: 'https://i.redd.it/jcyddoyzeo761.jpg',
+          title: 'FireLord'
+        })
+        .expect('Content-Type', /json/)
+        .expect(200);
+
+      expect(data.body).toEqual(expectation);
+    });
+
+    // test('deletes a character created', async() => {
+
+    //   const expectation = 
+    //     {
+    //       id: 8,
+    //       name:'Momo',
+    //       element: 'Air',
+    //       img: 'https://pbs.twimg.com/media/Eb78V98WsAU4-4G.png',
+    //       title: 'Lemur', 
+    //       owner_id: 1, 
+    //     };
+    //   const data = await fakeRequest(app)
+    //     .delete('/avatar/8')
+    //     .expect('Content-Type', /json/)
+    //     .expect(200);
+
+    //   expect(data.body).toEqual(expectation);
+    // });
+
+
   });
 });
