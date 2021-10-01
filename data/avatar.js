@@ -44,7 +44,7 @@ module.exports = [
   {
     name:'Momo',
     element: 'Air',
-    img: 'https://ih1.redbubble.net/image.1402053180.7949/poster,840x830,f8f8f8-pad,1000x1000,f8f8f8.jpg',
+    img: 'https://i.pinimg.com/originals/be/31/83/be31836efa6e88f094558feac39c2cf4.png',
     title: 'Lemur' 
   },
 ];
