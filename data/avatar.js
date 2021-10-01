@@ -32,19 +32,19 @@ module.exports = [
   {
     name:'Suki',
     element: 'None',
-    img: 'https://static.wikia.nocookie.net/pure-good-wiki/images/1/14/Suki.png/revision/latest?cb=20210128205901',
+    img: 'https://www.pngkit.com/png/full/157-1575591_png-avatar-the-last-airbender-image-freeuse-avatar.png',
     title: 'Kyoshi-Warrior' 
   }, 
   {
     name:'Appa',
     element: 'Air',
-    img: 'https://static.wikia.nocookie.net/p__/images/0/06/Appa.png/revision/latest?cb=20180813222453&path-prefix=protagonist',
+    img: 'https://64.media.tumblr.com/ac50fb0c75b02757620b46478077b413/tumblr_p27negJA0A1tyjd90o1_400.png',
     title: 'Bison' 
   }, 
   {
     name:'Momo',
     element: 'Air',
-    img: 'https://static.wikia.nocookie.net/p__/images/5/54/Tumblr_p3utnb393U1tyjd90o1_400.png/revision/latest?cb=20210227080156&path-prefix=protagonist',
+    img: 'https://ih1.redbubble.net/image.1402053180.7949/poster,840x830,f8f8f8-pad,1000x1000,f8f8f8.jpg',
     title: 'Lemur' 
   },
 ];
