@@ -174,24 +174,30 @@ describe('app routes', () => {
       expect(data.body).toEqual(expectation);
     });
 
-    // test('deletes a character created', async() => {
+    test('deletes a character', async() => {
+      const expectation = 
+        {
+          id: 8,
+          name:'Momo',
+          element: 'Air',
+          img: 'https://i.pinimg.com/originals/be/31/83/be31836efa6e88f094558feac39c2cf4.png',
+          title: 'Lemur', 
+          owner_id: 1, 
+        };
+      const data = await fakeRequest(app)
+        .delete('/avatar/8')
+        .expect('Content-Type', /json/)
+        .expect(200);
 
-    //   const expectation = 
-    //     {
-    //       id: 8,
-    //       name:'Momo',
-    //       element: 'Air',
-    //       img: 'https://pbs.twimg.com/media/Eb78V98WsAU4-4G.png',
-    //       title: 'Lemur', 
-    //       owner_id: 1, 
-    //     };
-    //   const data = await fakeRequest(app)
-    //     .delete('/avatar/8')
-    //     .expect('Content-Type', /json/)
-    //     .expect(200);
+      expect(data.body).toEqual(expectation);
 
-    //   expect(data.body).toEqual(expectation);
-    // });
+      const dataExpDel = await fakeRequest (app)
+        .get('/avatar')
+        .expect('Content-Type', /json/)
+        .expect(200);
+
+      expect(dataExpDel.body).toEqual(expect.not.arrayContaining([expectation]));
+    });
 
 
   });
