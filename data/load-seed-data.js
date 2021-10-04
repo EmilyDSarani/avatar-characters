@@ -3,7 +3,7 @@ const client = require('../lib/client');
 // import our seed data:
 const avatar = require('./avatar.js');
 const usersData = require('./users.js');
-const elementData = require('./element.js');
+const elementData = require('./elements.js');
 
 const { getEmoji } = require('../lib/emoji.js');
 run();
@@ -30,7 +30,7 @@ async function run() {
     await Promise.all(
       elementData.map(element => {
         return client.query(`
-                    INSERT INTO element (element_id, element_name)
+                    INSERT INTO elements (element_id, element_name)
                     VALUES ($1, $2);
                 `,
         [element.element_id, element.element_name]);
