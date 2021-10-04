@@ -177,7 +177,7 @@ describe('app routes', () => {
     test('deletes a character', async() => {
       const expectation = 
         {
-          id: 8,
+          id: expect.any(Number),
           name:'Momo',
           element: 'Air',
           img: 'https://i.pinimg.com/originals/be/31/83/be31836efa6e88f094558feac39c2cf4.png',
