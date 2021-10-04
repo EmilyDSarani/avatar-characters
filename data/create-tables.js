@@ -16,11 +16,15 @@ async function run() {
                     id SERIAL PRIMARY KEY,
                     email VARCHAR(256) NOT NULL,
                     hash VARCHAR(512) NOT NULL
-                );           
+                );   
+                CREATE TABLE element (
+                  element_id SERIAL PRIMARY KEY NOT NULL,
+                  element_name VARCHAR(512) NOT NULL
+                );
                 CREATE TABLE avatar (
                     id SERIAL PRIMARY KEY NOT NULL,
                     name VARCHAR(512) NOT NULL,
-                    element VARCHAR(512) NOT NULL,
+                    element_id INTEGER NOT NULL REFERENCES element(element_id),
                     img VARCHAR(512) NOT NULL,
                     title VARCHAR(512) NOT NULL,
                     owner_id INTEGER NOT NULL REFERENCES users(id)
