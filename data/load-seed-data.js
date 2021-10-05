@@ -31,7 +31,8 @@ async function run() {
       elementData.map(element => {
         return client.query(`
                     INSERT INTO elements (element_id, element_name)
-                    VALUES ($1, $2);
+                    VALUES ($1, $2)
+                    RETURNING *;
                 `,
         [element.element_id, element.element_name]);
       })
