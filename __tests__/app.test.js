@@ -128,30 +128,30 @@ describe('app routes', () => {
       expect(data.body).toEqual(expectation);
     });
 
-    // test('posting new character', async() => {
+    test('posting new character', async() => {
 
-    //   const expectation = 
-    //     {
-    //       id: expect.any(Number),
-    //       name:'Ozai',
-    //       element: 'Fire',
-    //       img: 'https://pbs.twimg.com/media/EOSb5rPX0AAQKtL.jpg',
-    //       title: 'Phoenix King',
-    //       owner_id: expect.any(Number), 
-    //     };
-    //   const data = await fakeRequest(app)
-    //     .post('/avatar')
-    //     .send({
-    //       name: 'Ozai',
-    //       element: 'Fire',
-    //       img: 'https://pbs.twimg.com/media/EOSb5rPX0AAQKtL.jpg',
-    //       title: 'Phoenix King'
-    //     })
-    //     .expect('Content-Type', /json/)
-    //     .expect(200);
+      const expectation = 
+        {
+          id: expect.any(Number),
+          name:'Ozai',
+          element_id: 1,
+          img: 'https://pbs.twimg.com/media/EOSb5rPX0AAQKtL.jpg',
+          title: 'Phoenix King',
+          owner_id: expect.any(Number), 
+        };
+      const data = await fakeRequest(app)
+        .post('/avatar')
+        .send({
+          name: 'Ozai',
+          element_id: 1,
+          img: 'https://pbs.twimg.com/media/EOSb5rPX0AAQKtL.jpg',
+          title: 'Phoenix King'
+        })
+        .expect('Content-Type', /json/)
+        .expect(200);
 
-    //   expect(data.body).toEqual(expectation);
-    // });
+      expect(data.body).toEqual(expectation);
+    });
     // test('putting updated info', async() => {
 
     //   const expectation = 
