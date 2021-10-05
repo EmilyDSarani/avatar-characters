@@ -153,107 +153,107 @@ describe('app routes', () => {
       expect(data.body).toEqual(expectation);
     });
 
-    // test('returns avatar elements', async() => {
+    test('returns avatar elements', async() => {
 
-    //   const expectation = [
-    //     { 
-    //       element_id: 1,
-    //       element_name: 'fire'
-    //     },
-    //     {
-    //       element_id: 2,  
-    //       element_name: 'air'
-    //     },
-    //     {
-    //       element_id: 3,  
-    //       element_name: 'water'
-    //     },
-    //     {
-    //       element_id: 4,  
-    //       element_name: 'earth'
-    //     },
-    //     {
-    //       element_id: 5,  
-    //       element_name: 'non-bender'
-    //     }
-    //   ];
+      const expectation = [
+        { 
+          element_id: 1,
+          element_name: 'fire'
+        },
+        {
+          element_id: 2,  
+          element_name: 'air'
+        },
+        {
+          element_id: 3,  
+          element_name: 'water'
+        },
+        {
+          element_id: 4,  
+          element_name: 'earth'
+        },
+        {
+          element_id: 5,  
+          element_name: 'non-bender'
+        }
+      ];
 
-    //   const data = await fakeRequest(app)
-    //     .get('/element')
-    //     .expect('Content-Type', /json/)
-    //     .expect(200);
+      const data = await fakeRequest(app)
+        .get('/elements')
+        .expect('Content-Type', /json/)
+        .expect(200);
 
-    //   expect(data.body).toEqual(expect.arrayContaining(expectation));
-    // });
+      expect(data.body).toEqual(expect.arrayContaining(expectation));
+    });
 
-    // test('posting new element', async() => {
+    test('posting new element', async() => {
 
-    //   const expectation = 
-    //     {
-    //       element_id: expect.any(Number),
-    //       element_name:'lightening',
-    //     };
-    //   const data = await fakeRequest(app)
-    //     .post('/element')
-    //     .send({
-    //       element_id: expect.any(Number),
-    //       element_name:'lightening',
-    //     })
-    //     .expect('Content-Type', /json/)
-    //     .expect(200);
+      const expectation = 
+        {
+          element_id: expect.any(Number),
+          element_name:'lightening',
+        };
+      const data = await fakeRequest(app)
+        .post('/elements')
+        .send({
+          element_id: 6,
+          element_name:'lightening',
+        })
+        .expect('Content-Type', /json/)
+        .expect(200);
 
-    //   expect(data.body).toEqual(expectation);
-    // });
+      expect(data.body).toEqual(expectation);
+    });
 
-    // test('putting updated info', async() => {
+    test('putting updated info', async() => {
 
-    //   const expectation = 
-    //     {
-    //       id: 2,
-    //       name:'Zuko',
-    //       element: 'Fire',
-    //       img: 'https://www.pngitem.com/pimgs/m/375-3756861_zuko-avatar-png-transparent-png.png',
-    //       title: 'FireLord',
-    //       owner_id: 1, 
-    //     };
-    //   const data = await fakeRequest(app)
-    //     .put('/avatar/2')
-    //     .send({
-    //       name:'Zuko',
-    //       element: 'Fire',
-    //       img: 'https://www.pngitem.com/pimgs/m/375-3756861_zuko-avatar-png-transparent-png.png',
-    //       title: 'FireLord'
-    //     })
-    //     .expect('Content-Type', /json/)
-    //     .expect(200);
+      const expectation = 
+        {
+          id: 2,
+          name:'Zuko',
+          element_id: 1,
+          img: 'https://www.pngitem.com/pimgs/m/375-3756861_zuko-avatar-png-transparent-png.png',
+          title: 'FireLord',
+          owner_id: 1, 
+        };
+      const data = await fakeRequest(app)
+        .put('/avatar/2')
+        .send({
+          name:'Zuko',
+          element_id: 1,
+          img: 'https://www.pngitem.com/pimgs/m/375-3756861_zuko-avatar-png-transparent-png.png',
+          title: 'FireLord'
+        })
+        .expect('Content-Type', /json/)
+        .expect(200);
 
-    //   expect(data.body).toEqual(expectation);
-    // });
+      expect(data.body).toEqual(expectation);
+    });
 
-    // test('deletes a character', async() => {
-    //   const expectation = 
-    //     {
-    //       id: expect.any(Number),
-    //       name:'Momo',
-    //       element: 'Air',
-    //       img: 'https://i.pinimg.com/originals/be/31/83/be31836efa6e88f094558feac39c2cf4.png',
-    //       title: 'Lemur', 
-    //       owner_id: 1, 
-    //     };
-    //   const data = await fakeRequest(app)
-    //     .delete('/avatar/8')
-    //     .expect('Content-Type', /json/)
-    //     .expect(200);
+    test('deletes a character', async() => {
+      const expectation = 
+        {
+          id: expect.any(Number),
+          name:'Momo',
+          element_id: 2,
+          img: 'https://i.pinimg.com/originals/be/31/83/be31836efa6e88f094558feac39c2cf4.png',
+          title: 'Lemur', 
+          owner_id: 1,
+        };
+      const data = await fakeRequest(app)
+        .delete('/avatar/8')
+        .expect('Content-Type', /json/)
+        .expect(200);
 
-    //   expect(data.body).toEqual(expectation);
+      expect(data.body).toEqual(expectation);
 
-    //   const dataExpDel = await fakeRequest (app)
-    //     .get('/avatar')
-    //     .expect('Content-Type', /json/)
-    //     .expect(200);
+      const dataExpDel = await fakeRequest (app)
+        .get('/avatar')
+        .expect('Content-Type', /json/)
+        .expect(200);
 
-    //   expect(dataExpDel.body).toEqual(expect.not.arrayContaining([expectation]));
-    // });
+      expect(dataExpDel.body).toEqual(expect.not.arrayContaining([expectation]));
+    });
 
   });
 }); 
