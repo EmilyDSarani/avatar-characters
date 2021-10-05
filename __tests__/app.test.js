@@ -153,57 +153,57 @@ describe('app routes', () => {
       expect(data.body).toEqual(expectation);
     });
 
-    // test('returns avatar elements', async() => {
+    test('returns avatar elements', async() => {
 
-    //   const expectation = [
-    //     { 
-    //       element_id: 1,
-    //       element_name: 'fire'
-    //     },
-    //     {
-    //       element_id: 2,  
-    //       element_name: 'air'
-    //     },
-    //     {
-    //       element_id: 3,  
-    //       element_name: 'water'
-    //     },
-    //     {
-    //       element_id: 4,  
-    //       element_name: 'earth'
-    //     },
-    //     {
-    //       element_id: 5,  
-    //       element_name: 'non-bender'
-    //     }
-    //   ];
+      const expectation = [
+        { 
+          element_id: 1,
+          element_name: 'fire'
+        },
+        {
+          element_id: 2,  
+          element_name: 'air'
+        },
+        {
+          element_id: 3,  
+          element_name: 'water'
+        },
+        {
+          element_id: 4,  
+          element_name: 'earth'
+        },
+        {
+          element_id: 5,  
+          element_name: 'non-bender'
+        }
+      ];
 
-    //   const data = await fakeRequest(app)
-    //     .get('/element')
-    //     .expect('Content-Type', /json/)
-    //     .expect(200);
+      const data = await fakeRequest(app)
+        .get('/elements')
+        .expect('Content-Type', /json/)
+        .expect(200);
 
-    //   expect(data.body).toEqual(expect.arrayContaining(expectation));
-    // });
+      expect(data.body).toEqual(expect.arrayContaining(expectation));
+    });
 
-    // test('posting new element', async() => {
+    test('posting new element', async() => {
 
-    //   const expectation = 
-    //     {
-    //       element_id: expect.any(Number),
-    //       element_name:'lightening',
-    //     };
-    //   const data = await fakeRequest(app)
-    //     .post('/element')
-    //     .send({
-    //       element_id: expect.any(Number),
-    //       element_name:'lightening',
-    //     })
-    //     .expect('Content-Type', /json/)
-    //     .expect(200);
+      const expectation = 
+        {
+          element_id: expect.any(Number),
+          element_name:'lightening',
+        };
+      const data = await fakeRequest(app)
+        .post('/elements')
+        .send({
+          element_id: 6,
+          element_name:'lightening',
+        })
+        .expect('Content-Type', /json/)
+        .expect(200);
 
-    //   expect(data.body).toEqual(expectation);
-    // });
+      expect(data.body).toEqual(expectation);
+    });
 
     test('putting updated info', async() => {
 
