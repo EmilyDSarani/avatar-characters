@@ -108,24 +108,25 @@ describe('app routes', () => {
       //expect(data.body).toEqual(expectation);
     });
   
-    // test('returns 1 avatar character', async() => {
+    test('returns 1 avatar character', async() => {
 
-    //   const expectation = 
-    //     {
-    //       id: 1,
-    //       name:'Aang',
-    //       element: 'Air',
-    //       img: 'https://www.pngitem.com/pimgs/m/233-2336335_transparent-aang-png-avatar-aang-png-download.png',
-    //       title: 'Avatar',
-    //       owner_id: 1 
-    //     };
-    //   const data = await fakeRequest(app)
-    //     .get('/avatar/1')
-    //     .expect('Content-Type', /json/)
-    //     .expect(200);
+      const expectation = 
+        {
+          id: 1,
+          name:'Aang',
+          element_id: 2,
+          img: 'https://www.pngitem.com/pimgs/m/233-2336335_transparent-aang-png-avatar-aang-png-download.png',
+          title: 'Avatar',
+          owner_id: 1 
+        };
+      const data = await fakeRequest(app)
+        .get('/avatar/1')
+        .expect('Content-Type', /json/)
+        .expect(200);
   
-    //   expect(data.body).toEqual(expectation);
-    //});
+     
+      expect(data.body).toEqual(expectation);
+    });
 
     // test('posting new character', async() => {
 
