@@ -41,10 +41,10 @@ async function run() {
     await Promise.all(
       avatar.map(avatar => {
         return client.query(`
-                    INSERT INTO avatar (name, element_id, element_name, img, title, owner_id)
-                    VALUES ($1, $2, $3, $4, $5, $6 );
+                    INSERT INTO avatar (name, element_id, img, title, owner_id)
+                    VALUES ($1, $2, $3, $4, $5);
                 `,
-        [avatar.name, avatar.element_id, avatar.element_name, avatar.img, avatar.title, user.id]);
+        [avatar.name, avatar.element_id, avatar.img, avatar.title, user.id]);
       })
     );
     
