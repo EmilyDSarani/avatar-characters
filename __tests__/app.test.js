@@ -76,7 +76,7 @@ describe('app routes', () => {
           id: 6,
           name:'Suki',
           element_id: 5,
-          img: 'https://www.pngkit.com/png/full/157-1575591_png-avatar-the-last-airbender-image-freeuse-avatar.png',
+          img: 'https://i.pinimg.com/474x/c5/b1/f9/c5b1f97819cb879678fb45f3aec93914.jpg',
           title: 'Kyoshi-Warrior',
           owner_id: 1  
         }, 
